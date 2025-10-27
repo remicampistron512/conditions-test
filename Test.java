@@ -1,17 +1,28 @@
+import java.util.Scanner;
+
 public class Test {
 	public static void main(String [] args){
-		int integer = 5;
-		if(integer < 0){
-			System.out.println(integer + " est négatif");
-		} else if(integer > 0){
-			System.out.println(integer + " est positif");
-		} else if(integer == 0){
-			System.out.println(integer + " est nul");
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Entrez un nombre");
+		int integerInt =0;
+		while (!scan.hasNextInt()) {
+            System.out.println("Entrée invalide, veuillez entrer un entier :");
+            scan.next(); 
+        }
+		
+		integerInt = scan.nextInt();
+		
+		if(integerInt < 0){
+			System.out.println(integerInt + " est négatif");
+		} else if(integerInt > 0){
+			System.out.println(integerInt + " est positif");
+		} else if(integerInt == 0){
+			System.out.println(integerInt + " est nul");
 		}
-		if(integer % 2 == 0){
-			System.out.println(integer + " est pair");
+		if(integerInt % 2 == 0){
+			System.out.println(integerInt + " est pair");
 		} else {
-			System.out.println(integer + " est impair");
+			System.out.println(integerInt + " est impair");
 		}
 	}
 }
