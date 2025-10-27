@@ -2,15 +2,20 @@ import java.util.Scanner;
 
 public class Test {
 	public static void main(String [] args){
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Entrez un nombre");
-		int integerInt =0;
-		while (!scan.hasNextInt()) {
-            System.out.println("Entrée invalide, veuillez entrer un entier :");
-            scan.next(); 
-        }
-		
-		integerInt = scan.nextInt();
+		int integerInt = 0;
+		if(args.length>0){
+			integerInt = Integer.parseInt(args[0]);
+		} else {
+			Scanner scan = new Scanner(System.in);
+			System.out.println("Entrez un nombre");
+			
+			while (!scan.hasNextInt()) {
+				System.out.println("Entrée invalide, veuillez entrer un entier :");
+				scan.next(); 
+			}
+			
+			integerInt = scan.nextInt();
+		}
 		
 		if(integerInt < 0){
 			System.out.println(integerInt + " est négatif");
